@@ -10,13 +10,21 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
-import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
+import { FcHome, FcAbout } from "react-icons/fc";
+import { FaBars } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
 
 const Navbar = () => (
-  <Flex p="2" borderBottom="1px" borderColor="gray.100">
-    <Box fontSize="3xl" color="red.400" fontWeight="bold">
+  <Flex
+    bg="red.600"
+    p="2"
+    paddingLeft="5"
+    paddingRight="3"
+    borderBottom="1px"
+    borderColor="gray.100"
+  >
+    <Box fontSize="3xl" border="none" color="white" fontWeight="bold">
       <Link href="/" paddingLeft="2">
         Redfin
       </Link>
@@ -26,9 +34,8 @@ const Navbar = () => (
       <Menu>
         <MenuButton
           as={IconButton}
-          icon={<FcMenu />}
-          variant="outlined"
-          color="red.400"
+          icon={<FaBars style={{ color: "white", fontSize: "24px" }} />}
+          colorScheme="red.600"
         />
         <MenuList>
           <Link href="/" passHref>

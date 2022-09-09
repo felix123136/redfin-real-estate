@@ -25,7 +25,7 @@ const Property = ({
   <Link href={`/property/${externalID}`} passHref>
     <Flex
       flexWrap="wrap"
-      w="420px"
+      w="384px"
       p="5"
       paddingTop="0"
       justifyContent="flex-start"
@@ -35,7 +35,7 @@ const Property = ({
         <Image
           src={coverPhoto ? coverPhoto.url : DefaultImage}
           alt="house"
-          width={400}
+          width={384}
           height={260}
         />
       </Box>

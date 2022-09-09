@@ -16,11 +16,11 @@ const Banner = ({
 }) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner" />
-    <Box p="5">
+    <Box p="5" paddingLeft="3" width={500}>
       <Text color="gray.500" fontSize="lg" fontWeight="medium">
         {purpose}
       </Text>
-      <Text fontSize="lg" fontWeight="bold">
+      <Text fontSize="2xl" fontWeight="bold">
         {title1}
         <br />
         {title2}
@@ -30,7 +30,7 @@ const Banner = ({
         <br />
         {desc2}
       </Text>
-      <Button fontSize="lg" bg="blue.300" color="white">
+      <Button fontSize="lg" borderRadius="sm" bg="red.600" color="white">
         <Link href={linkName}>{buttonText}</Link>
       </Button>
     </Box>
@@ -42,15 +42,15 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
     <Box>
       <Banner
         purpose="Rent a home"
-        title1="Rental Homes For"
-        title2="Everyone"
+        title1="Your perfect rental is"
+        title2="now on Redfin"
         desc1="Explore Apartments, Villas, Homes,"
-        desc2="and more"
+        desc2="and more."
         buttonText="Find rentals"
         linkName="/search?purpose=for-rent"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+        imageUrl="https://ssl.cdn-redfin.com/v435.2.0/images/merch/generalImages/Rental_Image.jpg"
       />
-      <Flex flexWrap="wrap">
+      <Flex justifyContent="center" flexWrap="wrap">
         {propertiesForRent.map((property) => (
           <Property property={property} key={property.id} />
         ))}
@@ -60,12 +60,12 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         title1="Find, Buy & Own Your"
         title2="Dream Home"
         desc1="Explore Apartments, Villas, Homes,"
-        desc2="and more"
+        desc2="and more."
         buttonText="Browse homes"
         linkName="/search?purpose=for-sale"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
+        imageUrl="https://ssl.cdn-redfin.com/v435.2.0/images/merch/generalImages/CompleteSolution_Q1_2020_557_YardSign2.jpg"
       />
-      <Flex flexWrap="wrap">
+      <Flex justifyContent="center" flexWrap="wrap">
         {propertiesForSale.map((property) => (
           <Property property={property} key={property.id} />
         ))}

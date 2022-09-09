@@ -4,9 +4,10 @@ const Footer = () => (
   <Box
     textAlign="center"
     p="5"
-    color="gray.600"
+    color="white"
     borderTop="1px"
     borderColor="gray.100"
+    bg="red.600"
   >
     &copy;2022 Redfin, Inc.
   </Box>

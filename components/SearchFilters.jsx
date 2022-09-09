@@ -17,12 +17,14 @@ import noresult from "../assets/images/noresult.svg";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 
 const SearchFilters = () => {
-  const [filters, setFilters] = useState(filterData);
+  const [filters] = useState(filterData);
   const [searchTerm, setSearchTerm] = useState("");
   const [locationData, setLocationData] = useState();
   const [showLocations, setShowLocations] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
   const searchProperties = (filterValues) => {
     const path = router.pathname;
     const { query } = router;
@@ -40,9 +42,11 @@ const SearchFilters = () => {
   useEffect(() => {
     if (searchTerm !== "") {
       const fetchData = async () => {
+        setLoading(true);
         const data = await fetchApi(
           `${baseUrl}/auto-complete?query=${searchTerm}`
         );
+        setLoading(false);
         setLocationData(data?.hits);
       };
       fetchData();
@@ -98,6 +102,7 @@ const SearchFilters = () => {
                 onClick={() => setSearchTerm("")}
               />
             )}
+            {loading && <Spinner margin="auto" marginTop="3" />}
             {showLocations && (
               <Box height="300px" overflow="auto">
                 {locationData?.map((location) => (
@@ -122,7 +127,7 @@ const SearchFilters = () => {
                     </Text>
                   </Box>
                 ))}
-                {!locationData?.length && (
+                {!loading && !locationData?.length && (
                   <Flex
                     justifyContent="center"
                     alignItems="center"
