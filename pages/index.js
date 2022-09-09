@@ -30,7 +30,7 @@ const Banner = ({
         <br />
         {desc2}
       </Text>
-      <Button fontSize="lg" borderRadius="sm" bg="red.600" color="white">
+      <Button fontSize="lg" borderRadius="sm" colorScheme="red" color="white">
         <Link href={linkName}>{buttonText}</Link>
       </Button>
     </Box>
