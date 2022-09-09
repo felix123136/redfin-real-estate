@@ -19,10 +19,10 @@ const Property = ({
     area,
     agency,
     isVerified,
-    externalId,
+    externalID,
   },
 }) => (
-  <Link href={`/property/${externalId}`} passHref>
+  <Link href={`/property/${externalID}`} passHref>
     <Flex
       flexWrap="wrap"
       w="420px"
@@ -46,7 +46,7 @@ const Property = ({
               {isVerified && <GoVerified />}
             </Box>
             <Text fontWeight="bold" fontSize="lg">
-              ${millify(price)}
+              AED {millify(price)}
               {rentFrequency && `/${rentFrequency}`}
             </Text>
           </Flex>
